@@ -1,0 +1,9 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Noa avatar" shape-rendering="crispEdges">
+  <rect width="96" height="96" rx="16" fill="#ffeac9"/>
+  <rect x="24" y="56" width="48" height="26" fill="#d9924f"/>
+  <rect x="28" y="20" width="40" height="34" fill="#f5c89f"/>
+  <rect x="24" y="14" width="48" height="18" fill="#7e5540"/>
+  <rect x="34" y="34" width="6" height="6" fill="#402d22"/>
+  <rect x="56" y="34" width="6" height="6" fill="#402d22"/>
+  <rect x="40" y="46" width="16" height="4" fill="#d48969"/>
+</svg>
