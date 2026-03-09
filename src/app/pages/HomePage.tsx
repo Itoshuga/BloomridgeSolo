@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import {
   AuthModal,
   HeroSection,
-  HomeFooter,
   IntroFeaturesSection,
   PixelSceneSection,
   SocialSection,
@@ -111,7 +110,6 @@ function HomePage() {
       <IntroFeaturesSection />
       <PixelSceneSection />
       <SocialSection />
-      <HomeFooter />
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </main>
   );

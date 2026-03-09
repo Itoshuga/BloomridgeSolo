@@ -6,7 +6,7 @@ const COMMUNITY_LINKS = [
 
 function SocialSection() {
   return (
-    <section className="section section--social" id="social">
+    <section className="section section--social" id="social" style={{ marginBottom: '1rem' }}>
       <div className="home-container social-footer">
         <article className="social-footer__intro">
           <h2>Bloomridge Community</h2>
