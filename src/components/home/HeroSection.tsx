@@ -1,11 +1,22 @@
-import { Link } from 'react-router-dom';
 import HeroHeader from './HeroHeader';
 
-function HeroSection() {
+type HeroSectionProps = {
+  headerCtaLabel: string;
+  onHeaderCtaClick: () => void;
+  onHeroPlayClick: () => void;
+  heroPlayLabel: string;
+};
+
+function HeroSection({
+  headerCtaLabel,
+  onHeaderCtaClick,
+  onHeroPlayClick,
+  heroPlayLabel,
+}: HeroSectionProps) {
   return (
     <section className="hero-section" id="home">
       <div className="header-container">
-        <HeroHeader />
+        <HeroHeader ctaLabel={headerCtaLabel} onCtaClick={onHeaderCtaClick} />
       </div>
 
       <div className="home-container hero-container">
@@ -33,9 +44,9 @@ function HeroSection() {
             </div>
 
             <div className="hero-actions">
-              <Link to="/play" className="pixel-button">
-                Nouvelle Partie
-              </Link>
+              <button type="button" className="pixel-button" onClick={onHeroPlayClick}>
+                {heroPlayLabel}
+              </button>
             </div>
 
           </article>

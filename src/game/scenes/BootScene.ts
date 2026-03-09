@@ -6,7 +6,7 @@ export class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('player', '../../../public/assets/player-placeholder.png');
+    this.load.image('player', '../../../assets/player-placeholder.png');
   }
 
   create() {

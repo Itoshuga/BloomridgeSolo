@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import GameCanvas from '../../components/game/GameCanvas';
 import {
@@ -13,6 +14,7 @@ import {
   saveAndBroadcastInputActionBindings,
 } from '../../game/input/input-actions';
 import { broadcastPauseMenuState } from '../../game/ui/pause-menu-events';
+import { auth } from '../../lib/firebase';
 import './PlayPage.css';
 
 const ACTION_ENTRIES = Object.entries(INPUT_ACTIONS) as Array<
@@ -54,6 +56,18 @@ function PlayPage() {
   const [bindings, setBindings] = useState(() =>
     buildInputActionBindings(loadInputActionBindings()),
   );
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (!firebaseUser) {
+        navigate('/', { replace: true });
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [navigate]);
 
   const closeMenu = useCallback(() => {
     setConflictMessage(null);

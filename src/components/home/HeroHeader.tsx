@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 
-function HeroHeader() {
+type HeroHeaderProps = {
+  ctaLabel: string;
+  onCtaClick: () => void;
+};
+
+function HeroHeader({ ctaLabel, onCtaClick }: HeroHeaderProps) {
   return (
     <header className="home-header">
       <div className="home-container home-header__container">
@@ -23,9 +28,9 @@ function HeroHeader() {
           </a>
         </nav>
 
-        <Link to="/play" className="pixel-button">
-          Play now
-        </Link>
+        <button type="button" className="pixel-button home-header__cta" onClick={onCtaClick}>
+          {ctaLabel}
+        </button>
       </div>
     </header>
   );
